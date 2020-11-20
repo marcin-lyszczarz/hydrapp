@@ -8,31 +8,32 @@ registerSW();
 
 const btnAdd = document.querySelector(".button__add");
 const btnDel = document.querySelector(".button__del");
+const span = document.querySelector(".hello__glass--number");
+span.innerHTML=localStorage.getItem('glass');
+
 
 btnAdd.addEventListener("click", () => {
   const span = document.querySelector(".hello__glass--number");
   let number = parseInt(span.textContent);
 
-  console.log(number);
-
   if (number >= 0) {
     number++;
-    console.log(number);
     span.innerHTML = number;
   }
+
+  localStorage.setItem('glass', number);
 });
+
+
 btnDel.addEventListener("click", () => {
   const span = document.querySelector(".hello__glass--number");
   let number = parseInt(span.textContent);
-
-  console.log(number);
 
   if (number == 0) {
       return;
   }else{
     number--;
-    console.log(number);
     span.innerHTML = number;
   }
-
+  localStorage.setItem('glass', number);
 });
