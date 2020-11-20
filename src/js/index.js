@@ -6,15 +6,19 @@ registerSW();
 
 /* place your code below */
 
-const btnAdd = document.querySelector(".button__add");
-const btnDel = document.querySelector(".button__del");
-const span = document.querySelector(".hello__glass--number");
+const btnAdd = document.querySelector(".button--add-js");
+const btnDel = document.querySelector(".button--del-js");
+const span = document.querySelector(".glass__counter--js");
+// const key = new Date().toLocaleString().slice(0, 10);
+
+
 span.innerHTML=localStorage.getItem('glass');
 
+const span = document.querySelector(".glass__counter--js");
+let number = parseInt(span.textContent);
 
 btnAdd.addEventListener("click", () => {
-  const span = document.querySelector(".hello__glass--number");
-  let number = parseInt(span.textContent);
+
 
   if (number >= 0) {
     number++;
@@ -26,12 +30,8 @@ btnAdd.addEventListener("click", () => {
 
 
 btnDel.addEventListener("click", () => {
-  const span = document.querySelector(".hello__glass--number");
-  let number = parseInt(span.textContent);
 
-  if (number == 0) {
-      return;
-  }else{
+  if (number > 0) {
     number--;
     span.innerHTML = number;
   }
