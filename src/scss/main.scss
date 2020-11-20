@@ -3,11 +3,65 @@
 @import "_variables";
 @import "modules/hello.scss";
 
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.main {
   background: $wtf;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+
+.header{
+  width: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 68px;
+  font-size: 48px;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+
+  &__add{
+    width: 216px;
+    height: 47px;
+    margin-top: 48px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    
+  }
+  &__del{
+    margin-top: 37px;
+    background: none;
+    border: none;
+    width: 216px;
+    height: 47px;
+    font-size: 14px;
+    color: #F5E5E7;
+    cursor: pointer;
+  }
 }
