@@ -1,4 +1,4 @@
-![cover](https://cotenfrontend.pl/img/cover.png)
+![cover](https://raw.githubusercontent.com/marcin-lyszczarz/hydrapp/master/public/og.png)
 
 # WTF Webpack Starter Kit 
 
