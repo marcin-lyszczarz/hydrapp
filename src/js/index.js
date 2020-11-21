@@ -8,32 +8,33 @@ registerSW();
 
 const btnAdd = document.querySelector(".button--add-js");
 const btnDel = document.querySelector(".button--del-js");
-const span = document.querySelector(".glass__counter--js");
-// const key = new Date().toLocaleString().slice(0, 10);
+const glassCounter = document.querySelector(".glass__counter--js");
+const key = new Date().toLocaleString().slice(0, 10);
 
+let currentGlass = 0;
 
-span.innerHTML=localStorage.getItem('glass');
+const localStorageValue = localStorage.getItem(key);
 
-const span = document.querySelector(".glass__counter--js");
-let number = parseInt(span.textContent);
+if(localStorageValue){
+  currentGlass = localStorageValue;
+}else{
+  localStorage.setItem(key, 0);
+}
+glassCounter.innerHTML = currentGlass;
 
 btnAdd.addEventListener("click", () => {
-
-
-  if (number >= 0) {
-    number++;
-    span.innerHTML = number;
+  if (currentGlass >= 0) {
+    currentGlass++;
   }
-
-  localStorage.setItem('glass', number);
+  glassCounter.innerHTML = currentGlass;
+  localStorage.setItem(key, currentGlass);
 });
 
 
 btnDel.addEventListener("click", () => {
-
-  if (number > 0) {
-    number--;
-    span.innerHTML = number;
+  if (currentGlass > 0) {
+    currentGlass--;
   }
-  localStorage.setItem('glass', number);
+  glassCounter.innerHTML = currentGlass;
+  localStorage.setItem(key, currentGlass);
 });
